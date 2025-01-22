@@ -1,0 +1,17 @@
+FROM postgres:latest
+
+# Get enviorment variables from dev.env
+ARG POSTGRES_USER
+ARG POSTGRES_PASSWORD
+ARG POSTGRES_DB
+
+# Set environment variables
+ENV POSTGRES_USER $POSTGRES_USER
+ENV POSTGRES_PASSWORD $POSTGRES_PASSWORD
+ENV POSTGRES_DB = $POSTGRES_DB
+
+# Expose PostgreSQL port
+EXPOSE 5432
+
+# Copy initialization scripts to Docker container
+COPY ./initdb /docker-entrypoint-initdb.d/

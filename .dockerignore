@@ -1,0 +1,33 @@
+# Node modules and other dependency directories
+node_modules/
+bower_components/
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+*.tmp
+
+# Ignore build directories
+dist/
+build/
+
+# Ignore environment files
+*.env*
+!*.env.example
+
+# Ignore Docker-related files
+Dockerfile
+docker-compose.yml
+docker-compose.override.yaml
+docker-compose.dev.yaml
+.docker/
+
+.git
+.gitignore
+
+# System files Ignore editor and OS-specific files
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

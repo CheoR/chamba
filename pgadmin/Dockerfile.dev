@@ -1,0 +1,12 @@
+FROM dpage/pgadmin4:latest
+
+# Get environment variables from dev.env
+ARG PGADMIN_DEFAULT_EMAIL
+ARG PGADMIN_DEFAULT_PASSWORD
+
+# Set environment variables
+ENV PGADMIN_DEFAULT_EMAIL $PGADMIN_DEFAULT_EMAIL
+ENV PGADMIN_DEFAULT_PASSWORD $PGADMIN_DEFAULT_PASSWORD
+
+# Expose pgAdmin port
+EXPOSE 80

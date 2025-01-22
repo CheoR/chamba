@@ -1,0 +1,30 @@
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+.bower_components/
+
+# Environment variables
+*.env
+*.env*
+!*.env.example
+
+# Build directories
+build/
+dist/
+
+# Docker files and directories
+docker-compose.override.yaml
+.docker/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# IntelliJ IDEA
+.idea/

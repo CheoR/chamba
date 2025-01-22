@@ -1,0 +1,29 @@
+services:
+  postgresql:
+    build:
+      context: ./database/postgresql
+      dockerfile: Dockerfile.dev
+    container_name: postgresql_dev_container
+    env_file:
+      - ./database/postgresql/dev.env
+    environment:
+      DEBUG: true
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    build:
+      context: ./pgadmin
+      dockerfile: Dockerfile.dev
+    container_name: pgadmin_dev_container
+    env_file:
+      - ./pgadmin/dev.env
+    ports:
+      - "80:80"
+    depends_on:
+      - postgresql
+
+volumes:
+  postgres_data:
