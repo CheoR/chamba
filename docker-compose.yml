@@ -1,0 +1,17 @@
+services:
+  postgresql:
+    build:
+      context: ./database/postgresql
+      dockerfile: Dockerfile.dev
+    container_name: postgres_container
+    env_file:
+      - ./database/postgresql/dev.env
+    enviroment:
+      DEBUG=true
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
